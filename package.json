@@ -1,0 +1,92 @@
+{
+  "name": "vite-plugin-koa-mock",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "A koa mock plugin for vite",
+  "private": false,
+  "author": "yikoyu<2282373181@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yikoyu/vite-plugin-koa-mock"
+  },
+  "homepage": "https://github.com/yikoyu/vite-plugin-koa-mock",
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "koa",
+    "mock",
+    "hmr"
+  ],
+  "main": "./dist/index.js",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "cd example && tsx mock-serve",
+    "start": "node dist/index.js",
+    "build": "tsup src/index.ts --dts --format cjs",
+    "build:watch": "tsup src/index.ts --dts --format cjs --watch",
+    "lint": "eslint {src,example}/**/*.{js,ts}",
+    "lint:fix": "eslint {src,example}/**/*.{js,ts} --fix",
+    "git-commit": "git-cz",
+    "push": "pnpm build:lib && pnpm publish --no-git-checks --registry https://registry.npmjs.org/",
+    "prepare": "husky install"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "engines": {
+    "node": ">=14",
+    "pnpm": ">=7"
+  },
+  "dependencies": {
+    "@koa/router": "^12.0.0",
+    "chokidar": "^3.5.3",
+    "esbuild": "^0.17.11",
+    "fast-glob": "^3.2.12",
+    "koa": "^2.14.1",
+    "lilconfig": "^2.1.0",
+    "path-to-regexp": "^6.2.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@commitlint/cz-commitlint": "^17.4.4",
+    "@semantic-release/changelog": "^6.0.2",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.0.7",
+    "@semantic-release/npm": "^9.0.2",
+    "@semantic-release/release-notes-generator": "^10.0.3",
+    "@types/koa": "^2.13.5",
+    "@types/koa__router": "^12.0.0",
+    "@types/lodash": "^4.14.191",
+    "@types/lodash-es": "^4.17.6",
+    "@types/node": "^18.14.6",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "chalk": "^5.2.0",
+    "commitizen": "^4.3.0",
+    "conventional-changelog-conventionalcommits": "^5.0.0",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-define-config": "^1.16.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
+    "lodash-es": "^4.17.21",
+    "prettier": "^2.8.4",
+    "semantic-release": "^20.1.1",
+    "tsup": "^6.6.3",
+    "tsx": "^3.12.3",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.4"
+  }
+}
